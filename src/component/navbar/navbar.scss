@@ -1,0 +1,78 @@
+@import '../../scss/variable';
+@import url('https://css.gg/home-alt.css');
+@import url('https://css.gg/user.css');
+
+
+.nav-bar{
+    position: static;
+    
+    height: $nav-bar-height;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    @include flex(center, space-between);
+ 
+    
+
+    .logo{
+        @include flex(center, unset);
+        cursor: pointer;
+        transition: opacity 0.5s ease;
+        
+        img{
+            max-height: 3rem;
+        }
+        .title{
+            font-size: 1.5rem;
+            color: #0065bd;
+            font-weight: 700;
+
+        }
+        
+        &:hover{
+            opacity: 0.9;
+        }
+
+
+    }
+
+    .items{
+        
+        @include flex(center, space-between);
+        font-size: 1rem;
+        font-weight: 600;
+
+        .element{
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            margin-left: 1.5rem;
+            transition: color 0.5s ease;
+
+            div{
+                margin-left: 0.3rem;
+            }
+            
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                border: 1px solid blue;
+                bottom: -5px;
+
+                transform: scale(0);
+                transition: transform 0.5s ease;
+            }
+
+            &:hover::before{
+                transform: scale(1);
+            }
+
+            &:hover{
+                color: blue;
+            }
+        }
+
+
+    
+    }
+}

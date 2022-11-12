@@ -1,0 +1,22 @@
+@import './scss/variable';
+
+
+body {
+  background-color: $bg-color;
+}
+
+.App {
+  text-align: center;
+  background-color: $bg-color;
+
+
+  .page-content{
+    display: none;
+    
+  }
+}
+
+.swiper-slide {
+  background-color: lightblue;
+  min-height: 100vh;
+}
