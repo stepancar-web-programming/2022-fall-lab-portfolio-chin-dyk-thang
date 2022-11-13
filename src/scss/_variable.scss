@@ -1,11 +1,22 @@
-$bg-color: rgb(248, 248, 248);
+$font-family: 'Sono', serif;
+
+$bg-color: lightblue;
 $text-color: black;
 
 $nav-bar-height: 4rem;
+$nav-bar-shrink-height: 3rem;
+$footer-height: 3rem;
 
 
 @mixin flex($aligin-item, $justify-content) {
     display: flex;
     align-items: $aligin-item;
     justify-content: $justify-content;
+}
+
+@mixin centralize($X, $Y){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate($X, $Y);
 }

@@ -3,20 +3,25 @@
 
 body {
   background-color: $bg-color;
+  font-family: $font-family;
+}
+
+img{
+  vertical-align: middle;
 }
 
 .App {
   text-align: center;
-  background-color: $bg-color;
-
+  
 
   .page-content{
-    display: none;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: $nav-bar-height;
+    padding-bottom: $footer-height;
+    min-height: 100vh;
+
     
   }
 }
 
-.swiper-slide {
-  background-color: lightblue;
-  min-height: 100vh;
-}

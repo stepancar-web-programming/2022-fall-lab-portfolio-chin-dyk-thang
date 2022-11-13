@@ -7,6 +7,8 @@ import './navbar.scss'
 import logo from '../../assets/logo.png'
 import { faHome, faFile , faAddressBook, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 
 
@@ -35,10 +37,25 @@ const navBarElement = [
 
 const Navbar = () => {
 
-    const navigate = useNavigate()  
+    const navigate = useNavigate()
+    const headerRef = useRef(null)
+    
+    useEffect(() => {
+        const shrinkHeader = () => {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                headerRef.current.classList.add('shrink')
+            } else {
+                headerRef.current.classList.remove('shrink')
+            }
+        }
+        window.addEventListener('scroll', shrinkHeader)
+        return () => {
+            window.removeEventListener('scroll', shrinkHeader)
+        }
+    }, [])
 
     return (
-        <div className='nav-bar'>
+        <div ref={headerRef} className='nav-bar'>
             <div className='logo' onClick={() => navigate('/')}>
                 <img src={logo}></img>
                 <div className='title'>Chin blog</div>
