@@ -1,0 +1,15 @@
+@import '../../scss/variable';
+
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: $footer-height;
+    background-color: rgb(63, 63, 63);
+    @include flex(center, center);
+    color: white;
+
+    .social-link{
+        margin-left: 0.3rem;
+    }
+}

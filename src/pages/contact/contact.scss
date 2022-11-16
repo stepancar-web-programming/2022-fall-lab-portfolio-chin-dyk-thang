@@ -1,0 +1,143 @@
+@import '../../scss/variable';
+
+.contact{
+    padding: 1rem;
+    
+    .social-link{
+        margin: 2rem auto;
+        @include flex(center, space-between);
+        width: 50%;
+        min-width: 300px;
+       
+
+        .facebook{
+            color: #1877f2;
+        }
+        
+        .linkedin{
+            color: #0172b1;
+        }
+
+        .telegram{
+            color: #28a8e9;
+        }
+        .whatsapp{
+            color: #4cca5a;
+        }
+        div{
+            position: relative;
+            font-size: 48px;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.9;
+            }
+        
+            &:active{
+                opacity: 0.6;
+            }
+        
+            @include mobile {
+                font-size: 30px;
+            }
+        
+            &::before{
+                content: attr(name);
+                font-size: 24px;
+                position: absolute;
+                background-color: rgba(grey, 0.6);
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 5px;
+                padding: 2px 5px;
+                color: white;
+                display: none;
+            }
+
+            &:hover::before{
+                display: block;
+            }
+            
+        }
+    }
+
+    .email{
+        margin-top: 5rem;
+
+        form{
+            @include flex(center, center);
+            flex-direction: column;
+            transition: transform 0.3s ease;
+
+            .field{
+                margin: 1rem auto;
+                padding: 0.4rem;
+                width: 80%;
+                max-width: 500px;
+
+
+                border: 2px solid transparent;
+                box-shadow: 0 0 5px 3px rgba(black, 0.2);
+                &:focus{
+                    outline: none;
+                    border: 2px solid rgba(black, 0.2);
+                    
+                }
+            }
+
+            input{
+                height: 2rem;
+
+            }
+
+            textarea{
+                margin: 1rem auto;
+                height: 10rem;
+                padding: 0.4rem;
+                width: 80%;
+                max-width: 500px;
+            }
+
+            button{
+                border: 0;
+                box-shadow: 0 0 4px 4px rgba(#20c8df, 0.2);
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-size: 1rem;
+                cursor: pointer;
+                background-color: #20c8df;
+                color: white;
+                font-weight: 700;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+
+                &:active{
+                    opacity: 0.6;
+                    border: white;
+                }
+
+            }
+
+        }
+
+        .notification{
+            width: fit-content;
+            max-width: 500px;
+            margin: 2rem auto;
+            background-color: rgb(64, 170, 64, 0.9);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            color: white;
+            text-align: left;
+            
+            transition: transform 0.3s ease;
+
+        }
+
+        .hide{
+            display: none;       
+        }
+    }
+}
