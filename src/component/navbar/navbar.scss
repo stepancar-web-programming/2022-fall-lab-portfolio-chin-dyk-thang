@@ -1,6 +1,4 @@
 @import '../../scss/variable';
-@import url('https://css.gg/home-alt.css');
-@import url('https://css.gg/user.css');
 
 
 .nav-bar{
@@ -15,7 +13,9 @@
     background-color: transparent;
     transition: background-color 1s ease, height 1s ease;
 
-    z-index: 99;
+   
+
+    z-index: 9;
     
     .logo{
         @include flex(center, unset);
@@ -26,6 +26,7 @@
             max-height: 3rem;
         }
         .title{
+            text-align: left;
             font-size: 1.5rem;
             color: #0065bd;
             font-weight: 700;
@@ -38,10 +39,11 @@
         
         
     }
+
     
     .items{
-        
         @include flex(center, space-between);
+
         font-size: 1rem;
         font-weight: 600;
         
@@ -51,10 +53,24 @@
             display: flex;
             margin-left: 1.5rem;
             transition: color 0.5s ease;
+            
+            &::after{
+                display: none;
+                content: attr(content);
+                position: absolute;
+                bottom: -35px;
+                border-radius: 10px 0 10px 10px;
+                right: 50%;
+                background-color: rgba(gray, 0.6);
+                padding: 5px;
+                color: white;
+            }
 
             div{
+                
                 margin-left: 0.3rem;
             }
+            
             
             &::before{
                 content: '';
@@ -73,6 +89,14 @@
             
             &:hover{
                 color: #0065bd;
+            }
+            @include mobile{
+                .hide{
+                    display: none;
+                }
+                &:hover::after{
+                    display: block;
+                }
             }
         }
         

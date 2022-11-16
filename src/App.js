@@ -1,7 +1,5 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {Swiper, SwiperSlide} from 'swiper/react'
-
 
 import './app.scss';
 
@@ -10,7 +8,7 @@ import Footer from './component/footer/Footer';
 import About from './pages/about/About';
 import Home from './pages/home/Home';
 import Projects from './pages/projects/Projects';
-import Resume from './pages/resume/Resume';
+import Contact from './pages/contact/Contact';
 
 
 function App() {
@@ -24,7 +22,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/projects' element={<Projects />} />
-            <Route path='/resume' element={<Resume />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
         <Footer></Footer>
         </div>

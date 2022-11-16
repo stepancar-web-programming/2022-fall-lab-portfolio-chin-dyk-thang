@@ -5,7 +5,7 @@ import './navbar.scss'
 
 
 import logo from '../../assets/logo.png'
-import { faHome, faFile , faAddressBook, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
+import { faHome , faAddressBook, faProjectDiagram, faMessage} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from 'react';
 import { useRef } from 'react';
@@ -29,9 +29,9 @@ const navBarElement = [
         path: '/projects'
     },
     {
-        name: 'Resume',
-        icon: faFile,  
-        path: '/resume'
+        name: 'Contact',
+        icon: faMessage,
+        path: '/contact'
     }
 ]
 
@@ -57,16 +57,20 @@ const Navbar = () => {
     return (
         <div ref={headerRef} className='nav-bar'>
             <div className='logo' onClick={() => navigate('/')}>
-                <img src={logo}></img>
-                <div className='title'>Chin blog</div>
+                <img src={logo} alt='logo'></img>
+                <div className='title'>Chin's portfolio</div>
             </div>
+
 
             <div className='items'>
                 {navBarElement.map((item, key) => 
-                    <div className='element' key={key} onClick={() => navigate(item.path)}>
-                        <FontAwesomeIcon icon={item.icon} />    
+                    <div className='element' 
+                    key={key} 
+                    content={item.name}
+                    onClick={() => navigate(item.path)}>
+                        <FontAwesomeIcon icon={item.icon}  />    
                         
-                        <div>{item.name}</div>    
+                        <div className='hide' >{item.name}</div>    
                     </div>
                 )}
             </div>
