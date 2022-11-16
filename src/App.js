@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { HashRouter, Routes, Route} from 'react-router-dom'
 
 import './app.scss';
 
@@ -14,7 +14,7 @@ import Contact from './pages/contact/Contact';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Navbar></Navbar>
         
         <div className='page-content'>
@@ -27,7 +27,7 @@ function App() {
         <Footer></Footer>
         </div>
 
-      </BrowserRouter>
+      </HashRouter>
 
       
     </div>
