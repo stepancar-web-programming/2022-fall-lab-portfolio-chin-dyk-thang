@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadphones, faPlay } from '@fortawesome/free-solid-svg-icons'
 
@@ -34,10 +34,6 @@ import Frame from '../../component/Frame/Frame'
 const About = () => {
   
   const youtubeEmbed = useRef(null)
-  useEffect(() => {
-
-  }, [])
-
 
   const playMusic = () => {
 
@@ -66,7 +62,7 @@ const About = () => {
         </div>
 
         <div className='video-responsive'>
-          <h2>This is the song that keep me movitated for life. <FontAwesomeIcon icon={faHeadphones}/></h2>
+          <h2>This is the song that keeps me movitated for life. <FontAwesomeIcon icon={faHeadphones}/></h2>
           <div className='play-btn'>
             <FontAwesomeIcon icon={faPlay} onClick={playMusic} />
           </div>

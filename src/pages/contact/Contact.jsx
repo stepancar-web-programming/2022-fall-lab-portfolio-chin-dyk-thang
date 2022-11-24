@@ -38,7 +38,7 @@ const socialNetworks = [
 
 const sendMessage = event => {
   const msgForm = document.getElementById('msg-form')
-  const notification = document.getElementsByClassName('notification')[0]
+  const notification = document.getElementById('succ-notif')
   if (msgForm.checkValidity()) {
     event.preventDefault()
     msgForm.classList.add('hide')
@@ -54,6 +54,7 @@ const Contact = () => {
         {socialNetworks.map((item, key) => 
         <div className={item.name.toLocaleLowerCase()}
             name={item.name}
+            key={key}
             onClick={() => window.open(item.link, '_blank')}>
           <FontAwesomeIcon icon={item.logo} key={key}/>
         </div>)}
@@ -69,7 +70,7 @@ const Contact = () => {
             <button type='submit' onClick={sendMessage}> <FontAwesomeIcon icon={faPaperPlane}/> Send</button>
         </form>
 
-        <div className='notification hide'>
+        <div id='succ-notif' className='notification hide'>
           Thank you for sending me. We will try to response as soon as possible. 
         </div>
       </div>

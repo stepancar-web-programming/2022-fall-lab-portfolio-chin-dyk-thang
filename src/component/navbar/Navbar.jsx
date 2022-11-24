@@ -58,7 +58,7 @@ const Navbar = () => {
         <div ref={headerRef} className='nav-bar'>
             <div className='logo' onClick={() => navigate('/')}>
                 <img src={logo} alt='logo'></img>
-                <div className='title'>Chin's portfolio</div>
+                <div className='title'>Chin&apos;s portfolio</div>
             </div>
 
 

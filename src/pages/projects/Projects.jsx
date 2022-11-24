@@ -39,7 +39,7 @@ const Projects = () => {
       <h1>My recent projects</h1>
       <div className='project-cards'>
         {projects.map((item, key) => 
-          <div className='card'>
+          <div className='card' key={key}>
             <img src={item.img} alt={item.title}></img>
             <h2 className='title'>{item.title}</h2>
             <div className='description'>{item.description}</div>
