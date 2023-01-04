@@ -1,0 +1,38 @@
+$font-family: 'Sono', serif;
+
+$bg-color: rgb(255, 255, 255);
+$text-color: black;
+
+$nav-bar-height: 4rem;
+$nav-bar-shrink-height: 3rem;
+$footer-height: 3rem;
+
+
+@mixin flex($aligin-item, $justify-content) {
+    display: flex;
+    align-items: $aligin-item;
+    justify-content: $justify-content;
+}
+
+@mixin centralize($X, $Y){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate($X, $Y);
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+
+@mixin overlay($color: rgba(black, 0.6)){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color;
+}

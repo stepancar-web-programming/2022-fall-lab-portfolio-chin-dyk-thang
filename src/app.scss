@@ -1,0 +1,27 @@
+@import './scss/variable';
+
+
+body {
+  background-color: $bg-color;
+  font-family: $font-family;
+}
+
+img{
+  vertical-align: middle;
+}
+
+.App {
+  text-align: center;
+  
+
+  .page-content{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: $nav-bar-height;
+    padding-bottom: $footer-height;
+    min-height: 100vh;
+
+    
+  }
+}
+
